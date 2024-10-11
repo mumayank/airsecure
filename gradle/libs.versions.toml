@@ -7,9 +7,15 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.6"
 activityCompose = "1.9.2"
-composeBom = "2024.04.01"
-appcompat = "1.6.1"
-material = "1.10.0"
+composeBom = "2024.09.03"
+appcompat = "1.7.0"
+material = "1.12.0"
+rootbeerLib = "0.1.0"
+material3 = "1.0.0"
+runtimeLivedata = "1.1.0"
+ui = "1.2.0"
+activity = "1.4.2"
+constraintlayout = "1.4.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -28,6 +34,12 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "runtimeLivedata" }
+material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+ui = { module = "androidx.compose.ui:ui", version.ref = "ui" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+rootbeer-lib = { module = "com.scottyab:rootbeer-lib", version.ref = "rootbeerLib" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
