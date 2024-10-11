@@ -24,6 +24,16 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel.viewModelScope.launch {
+            AirSecure.setSecureWindow(window)
+            val appSecurityReport = AirSecure.getAppSecurityReport(this@MainActivity)
+            if (appSecurityReport is AirSecure.AppSecurityReport.AppIsNotSecure) {
+                // do something
+            }
+            AirSecure.checkAppSecurityReportPeriodically(this@MainActivity) { appSecurityViolationTypes ->
+                // do something
+            }
+        }
         with(AirSecure) {
             setSecureWindow(window)
             viewModel.viewModelScope.launch {
