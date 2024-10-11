@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Air Secure Project"
 include(":app")
- 
+include(":airsecure")
