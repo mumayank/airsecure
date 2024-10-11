@@ -36,7 +36,7 @@ Ready to secure your app? Here's how you can get started in **just a couple of m
 
 ### Step 1: Add AirSecure to your project
 
-First, add **jitpack** to your project’s repository:
+First, add **jitpack** to your project’s build.gradle:
 
 ```gradle
 repositories {
@@ -45,7 +45,7 @@ repositories {
 }
 ```
 
-Next, add the dependency for **AirSecure**:
+Next, add the dependency for **AirSecure** in your app's build.gralde:
 
 ```gradle
 dependencies {
@@ -66,13 +66,13 @@ Here’s how simple it is to implement **AirSecure**:
 AirSecure.setSecureWindow(window)
 
 // Get a security report to check if your app is secure
-val appSecurityReport = AirSecure.getAppSecurityReport(this@MainActivity)
+val appSecurityReport = AirSecure.getAppSecurityReport(context)
 if (appSecurityReport is AirSecure.AppSecurityReport.AppIsNotSecure) {
     // Handle security issues here
 }
 
 // Periodically check for any app security violations
-AirSecure.checkAppSecurityReportPeriodically(this@MainActivity) { appSecurityViolationTypes ->  
+AirSecure.checkAppSecurityReportPeriodically(context) { appSecurityViolationTypes ->  
     // Respond to security violations here
 }
 ```
@@ -97,11 +97,15 @@ Feel free to play around with the sample app to see how it works! 🎮
 - Absolutely! **AirSecure** gives you flexibility by providing callbacks so you can handle any security violations in your own way.
 
 **Q: Does it impact my app’s performance?**
-- Not at all! **AirSecure** is lightweight and optimized to run seamlessly alongside your app. 💨
+- Not at all! **AirSecure** is lightweight and optimized to run seamlessly alongside your app. 💨 (The library uses 5s intevals to monitor the app by default (customizable), and also uses coroutine's IO dispatcher to check emulator related dir files or rooting)
 
 ## Contribution 🛠️
 
 Want to make **AirSecure** even better? We welcome contributions! Please feel free to submit pull requests, report issues, or suggest features. Let’s make the Android world more secure, one app at a time! 🛡️
+
+## Shoutout
+ 
+Thanks to [rootbeer](https://github.com/scottyab/rootbeer) library for making it easier to detect root. This library utilizes rootbeer internally.
 
 ---
 
