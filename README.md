@@ -1,4 +1,4 @@
-<img src="./assets/readme_header.png" alt="Alt text" width="500"/>
+<img src="./assets/logo.jpg" alt="Alt text" width="500"/>
 
 # AirSecure 🔒
 
